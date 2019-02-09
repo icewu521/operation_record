@@ -1,0 +1,34 @@
+
+CREATE TABLE user(id integer primary key,name text,pw text,level integer);
+
+create table T_USER
+(
+id int(4) auto_increment primary key,
+username varchar(40) unique,
+password varchar(50),
+usertype int(4),
+c_time varchar(30),
+realname varchar(20),
+authid varchar(200)
+)CHARACTER SET utf8;
+
+
+create table T_CONTENT
+(
+id int(12) auto_increment primary key,
+content varchar(250),
+opruser varchar(20),
+loginuser varchar(20),
+oprtype int(4),
+c_time varchar(30),
+createid int(4)
+)CHARACTER SET utf8;
+
+
+create table T_SETTING
+(
+id int(4) auto_increment primary key,
+oprset varchar(20),
+oprvalue int(4),
+c_time varchar(30)
+)CHARACTER SET utf8;

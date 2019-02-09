@@ -1,0 +1,30 @@
+<head>
+    <meta charset="UTF-8">
+    <title>查询权限</title>
+</head>
+<body>
+<h1 align="center">欢迎使用安徽理工大学工作记录系统</h1>
+<li style="text-align:center">当前登录用户为：{{ user }}</li>
+
+<table align="center">
+
+	<tr>
+		<td align="center">查询结果如下：</td>
+	</tr>
+    {% for user_db1 in users %}
+	<tr>
+		<td align="center">
+            <label><input name="autheduser" type="checkbox" disabled=True value="{{ user_db1[0] }}"/>{{ user_db1[1] }}({{ user_db1[2] }})</label>
+		</td>
+    </tr>
+    {% end %}
+    <tr>
+        <td align="center">
+            <button type="submit"><a href="/more">返回</a></button>
+        </td>
+	</tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<head>
+    <meta charset="UTF-8">
+    <title>查询权限</title>
+</head>
+<body>
+<h1 align="center">欢迎使用安徽理工大学工作记录系统</h1>
+<li style="text-align:center">当前登录用户为：{{ user }}</li>
+
+<table align="center">
+	<form action='/queryauth' method='post' align="center">
+				{% module xsrf_form_html() %}
+	<tr>
+		<td>请选择要查询的用户：</td>
+	</tr>
+    {% for user_db1 in users %}
+	<tr>
+		<td align="center">
+            <label><input name="queryuser" type="radio" value="{{ user_db1[0] }}" />{{ user_db1[1] }}({{ user_db1[2] }})</label>
+		</td>
+    </tr>
+    {% end %}
+		<tr>
+			<td align="center">
+				<button type='submit'>确定</button>
+                <button formmethod="get" formaction="/more" type="submit" >返回</button>
+			</td>
+		</tr>
+	</form>
+</table>
+
+</body>
+</html>

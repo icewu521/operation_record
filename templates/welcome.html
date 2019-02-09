@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎使用安徽理工大学工作记录系统</title>
+</head>
+<body>
+<h1 align="center">欢迎使用安徽理工大学工作记录系统</h1>
+<li style="text-align:center">当前登录用户为：{{ user }}</li>
+<li style="text-align:center">您的IP地址为：{{ host_ip }}</li>
+<div>
+    <p align="center"><a href="/newrecorde">新建记录</a></p>
+    <p align="center"><a href="/content/1">查看记录</a></p>
+    <p align="center"><a href="/newpassword">修改密码</a></p>
+    {% if usertype == admin_type %}
+        <p align="center"><a href="/more">更多操作</a></p>
+    {% end %}
+</div>
+<div style="width:100%;text-align:center">
+<form align="center" action="/logout" method="get">
+    <button name="logout" type="submit" value="exit">退出登录</button>
+</form>
+</div>
+</body>
+</html>

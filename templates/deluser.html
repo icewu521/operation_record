@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除用户</title>
+</head>
+<body>
+<div style="width:100%;text-align:center">
+    <h1 align="center">删除用户</h1>
+<form align="center" action="/deluser" method="post">
+    {% module xsrf_form_html() %}
+    <p>请输入需要删除的用户名：<input type="text" name="delusername"></p>
+    <button type="submit" value="删除">删除</button>
+    <button formmethod="get" formaction="/more" type="submit" >返回</button>
+</form>
+</div>
+</body>
+</html>

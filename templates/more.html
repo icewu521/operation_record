@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎使用安徽理工大学工作记录系统</title>
+</head>
+<body>
+<h1 align="center">欢迎使用安徽理工大学工作记录系统</h1>
+<li style="text-align:center">当前登录用户为：{{ user }}</li>
+<li style="text-align:center">您的IP地址为：{{ host_ip }}</li>
+<div>
+    {% if usertype == admin_type %}
+        <p align="center"><a href="/register">新建用户</a></p>
+        <p align="center"><a href="/deluser">删除用户</a></p>
+        <p align="center"><a href="/resetpassword">重置密码</a></p>
+        <p align="center"><a href="/modifycontent">修改记录</a></p>
+        <p align="center"><a href="/delcontent">删除记录</a></p>
+        <p align="center"><a href="/queryauth">查询权限</a></p>
+        <p align="center"><a href="/setauth">设置权限</a></p>
+        <p align="center"><a href="/show">查看磁盘使用情况</a></p>
+        <p align="center"><a href="/changeitem">修改记录内容每页显示条目数</a></p>
+    {% else %}
+        <p align="center">对不起，您不具有管理员权限！</p>
+        <button formmethod="get" formaction="/welcome" type="submit" >返回</button>
+    {% end %}
+</div>
+<div style="width:100%;text-align:center">
+<form align="center" action="/logout" method="get">
+    <button formmethod="get" formaction="/welcome" type="submit" >返回</button>
+    <button name="logout" type="submit" value="exit">退出登录</button>
+</form>
+</div>
+</body>
+</html>

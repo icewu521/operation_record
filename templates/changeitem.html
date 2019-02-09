@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改记录内容条目数</title>
+</head>
+<body>
+<div style="width:100%;text-align:center">
+    <h1 align="center">修改记录内容每页显示条目数</h1>
+<form align="center" action="/changeitem" method="post">
+    {% module xsrf_form_html() %}
+    <p>设置每页显示条目数：<input type="text" name="newitem" value="{{ item }}"></p>
+    <button type="submit" value="修改">修改</button>
+    <button formmethod="get" formaction="/more" type="submit" >返回</button>
+</form>
+</div>
+</body>
+</html>

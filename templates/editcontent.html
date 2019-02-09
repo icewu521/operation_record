@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改工作记录</title>
+</head>
+<body>
+<div style="width:100%;text-align:center">
+    <h1 align="center">修改工作记录</h1>
+<form align="center" action="/editcontent" method="post">
+    {% module xsrf_form_html() %}
+    <p>操作人：<input type="text" name="newuser" value="{{ oprname }}"></p>
+    <p>操作内容：<textarea rows="10" cols="40" type="text" name="newcontent">{{ oprcontent }}</textarea></p>
+    <button type="submit" value="修改">修改</button>
+    <button formmethod="get" formaction="/more" type="submit" >返回</button>
+</form>
+</div>
+</body>
+</html>

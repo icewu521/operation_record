@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置用户权限成功</title>
+</head>
+<body>
+{% for id in authuser %}
+<h1 align="center">设置用户id: {{ id }} 权限成功，谢谢！</h1>
+{% end %}
+    <form align="center" action="/more">
+        <button value="back">返回</button>
+    </form>
+</body>
+</html>

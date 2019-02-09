@@ -1,0 +1,44 @@
+<head>
+    <meta charset="UTF-8">
+    <title>设置权限</title>
+</head>
+<body>
+<h1 align="center">欢迎使用安徽理工大学工作记录系统</h1>
+<li style="text-align:center">当前登录用户为：{{ user }}</li>
+
+<table align="center">
+	<form action='/setauth' method='post' align="center">
+				{% module xsrf_form_html() %}
+	<tr>
+		<td>请选择要分配的用户：</td>
+		<td>请选择要分配的权限：</td>
+	</tr>
+	<tr>
+		<td align="right">
+			<select name="souruser[]" >
+				{% for user_db1 in users %}
+				<option value ="{{ user_db1[0] }}" >{{ user_db1[1] }}({{ user_db1[2] }})</option>
+				{% end %}
+			</select>
+		</td>
+		<td align="right">
+			<select name="authid[]" multiple="multiple">
+				{% for user_db2 in users %}
+				<option value ="{{ user_db2[0] }}" >{{ user_db2[1] }}({{ user_db2[2] }})</option>
+				{% end %}
+			</select>
+		</td>
+    </tr>
+		<tr>
+			<td align="right">
+				<button type='submit' class='btn btn-primary'>确定</button>
+			</td>
+			<td align="right">
+				<button formmethod="get" formaction="/more" type="submit" >返回</button>
+			</td>
+		</tr>
+	</form>
+</table>
+
+</body>
+</html>

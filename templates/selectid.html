@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入修改记录id</title>
+</head>
+<body>
+<div style="width:100%;text-align:center">
+    <h1 align="center">修改记录内容</h1>
+<form align="center" action="/modifycontent" method="post">
+    {% module xsrf_form_html() %}
+    <p>请输入需要修改记录的序号：<input type="text" name="id"></p>
+    <button type="submit" value="下一步">下一步</button>
+    <button formmethod="get" formaction="/more" type="submit" >返回</button>
+</form>
+</div>
+</body>
+</html>

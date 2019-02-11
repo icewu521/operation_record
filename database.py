@@ -10,11 +10,11 @@ def connectmysql():
     config = {
             'host': '127.0.0.1',
             'port': 3306,
-            'user': 'root',
-            'passwd': 'qqsg2000C',
-            'db': 'opr',
+            'user': '******',
+            'passwd': '******',
+            'db': '******',
             'charset': 'utf8'
-        }  # 链接的配置字典信息
+        }  # 链接的配置字典信息,配置自己数据库的连接信息
     try:
         mysql = pymysql.connect(**config)
         return mysql

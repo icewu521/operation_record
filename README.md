@@ -22,3 +22,5 @@ operation record system
 
 项目目录中,database.py是连接数据库的驱动文件,包括连接方式口令,定义好的数据库操作函数等.
 operation_record.py是项目的主文件在windows下编写.linux_operation_record.py是通过screen.txt文件中命令转化为linux下的可执行文件.别忘了执行添加权限命令chmod + x
+
+数据库表结构,建表等语句,参考createtables.txt

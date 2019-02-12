@@ -9,6 +9,9 @@ operation record system
 项目目录中,database.py是连接数据库的驱动文件,包括连接方式口令,定义好的数据库操作函数等.
 operation_record.py是项目的主文件在windows下编写.linux_operation_record.py是通过screen.txt文件中sed命令转化为linux下的可执行文件.别忘了执行添加权限命令chmod + x
 
+static文件夹存储了一些静态文件，如css，js等等。目录位置可以定制。
+templates目录为存放html模板文件夹，所有html模板均存放于此目录下。
+
 1 安装操作系统等基础环境。Linux笔者选用的是CentOS 7.1 x64版本，其它版本也可，根据自己喜好决定。应用软件Python下载于官网，编译安装即可，需要注意的是Python 2版本与3版本差距较大，笔者基于Python 3.6版本开发。数据库使用MySQL 5.7.20版本，下载与操作系统对应的rpm包安装。Tornado是基于Python的Web开发框架，它是非阻塞式服务器，性能强大，笔者选用的4.5.2版本，使用命令pip install tornado安装即可。
 
 2 数据库设计。数据库表结构,建表等语句,参考createtables.txt。笔者设计了三张表，一张用于存储主要信息记录的表T_CONTENT；一张存储用户的表T_USER，用于存储用户的账户、密码、权限等；还有一张表T_SETTING用于存储系统设置等。可以直接写SQL语句在数据库中执行建表，也可以在诸如Navicat之类的客户端程序中可视化建表。表中的字段也是根据业务需要而设置。
